@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/style.css" type="text/css">
+<script src="./js/jscolor.min.js"></script>
+<script src="./js/fabric.min.js"></script>
+<script src="./js/jquery-3.2.1.slim.min.js"></script>
+<script src="./js/kingbz.js"></script>
+</head>
+<body>

@@ -1,0 +1,394 @@
+body {
+  background: #eee;
+  margin: 0;
+  font-size: 16px;
+  height: 100%;
+  color: #555;
+}
+
+a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  display: inline-table;
+}
+
+.btn-style {
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  border: 0;
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  outline: none;
+  background-color: #fff;
+  color: #555;
+}
+
+.btn-style:hover,
+.btn-style:active {
+  cursor: pointer;
+  color: #000;
+}
+
+.btn-style__default {
+  color: #999;
+}
+
+.btn-style__default:hover,
+.btn-style__default:active {
+  color: #666;
+}
+
+/* iOSでのデフォルトスタイルをリセット */
+
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  box-sizing: border-box;
+}
+
+input[type="submit"]::-webkit-search-decoration,
+input[type="button"]::-webkit-search-decoration {
+  display: none;
+}
+
+input[type="submit"]::focus,
+input[type="button"]::focus {
+  outline-offset: -2px;
+}
+
+input[type="text"][disabled] {
+  cursor: not-allowed; /* 禁止カーソル */
+  color: #999;
+}
+
+.input-style {
+  padding: 0.5em;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  width: 100%;
+  background-color: #fff;
+  font-size: 16px;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border-radius: 0;
+}
+
+.input-style:hover,
+.input-style:active {
+  cursor: pointer;
+}
+
+.textarea-style {
+  padding: 0.5em;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  width: 100%;
+  background-color: #fff;
+  font-size: 16px;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border-radius: 0;
+}
+
+.textarea-style:hover,
+.textarea-style:active {
+  cursor: pointer;
+}
+
+.select-style {
+  padding: 0.5em;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  width: 100%;
+  background-color: #fff;
+  font-size: 16px;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border-radius: 0; /*   background: url(arrow01.png) right 50% no-repeat, -webkit-linear-gradient(top, #fff 0%,#efebe1 100%);
+  background: url(arrow01.png) right 50% no-repeat, linear-gradient(to bottom, #fff 0%,#efebe1 100%);
+  background-size: 20px, 100%; */
+}
+
+.select-style:hover,
+.select-style:active {
+  cursor: pointer;
+}
+
+.top {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.top__header {
+  width: 100%;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+}
+
+.top__header-logo {
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+}
+
+.top__content-box {
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  margin-bottom: 1em;
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.top__content-box:hover,
+.top__content-box:active {
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.top__content-box span {
+  font-size: 13px;
+  color: #aaa;
+  display: block;
+}
+
+.top__content-box-inner--heading {
+  display: block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.top__content-box-inner--body {
+  display: table-cell;
+  vertical-align: middle;
+  display: block;
+  width: 100%;
+}
+
+.top__content-img {
+  border: 1px solid #ccc;
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.top__content-name {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.top__content-edit {
+  letter-spacing: -.4em;
+  float: right;
+  width: 100%;
+  display: inline-block;
+}
+
+.top__content-btn {
+  display: inline-block;
+  letter-spacing: normal;
+  width: 50%;
+}
+
+.create {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+}
+
+.create_preview .canvas-container {
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.create__header {
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+  display: table;
+  margin-bottom: 1em;
+  background-color: #fff;
+}
+
+.create__header-unit-btn {
+  display: table-cell;
+  vertical-align: middle;
+  width: 33%;
+}
+
+.create__header-unit-logo {
+  display: table-cell;
+  vertical-align: middle;
+  width: 33%;
+}
+
+.create__header-logo {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.canvas-container {
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+/* create_contet */
+
+.create_contet {
+  display: table;
+  bottom: 0;
+  background-color: #fff;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+}
+
+.create_contet__add {
+  display: table-cell;
+  width: 25%;
+  vertical-align: middle;
+}
+
+.create_contet__text-edit {
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.create_contet__text-edit-textarea {
+  outline: 0;
+  border: 1px solid #ccc;
+  padding: 1em;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+}
+
+.create_contet__text-btn {
+  outline: 0;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  padding: 1em;
+}
+
+.create_contet__text-btn:hover,
+.create_contet__text-btn:active {
+  pointer: cursor;
+  background-color: #ddd;
+}
+
+.create_contet__text-font {
+  margin-bottom: 1em;
+}
+
+.create_contet__text-font-label {
+  color: #aaa;
+  margin-right: 0.5em;
+}
+
+.create_contet__text-color {
+  margin-bottom: 1em;
+}
+
+.create_contet__text-color-label {
+  color: #aaa;
+  margin-right: 0.5em;
+}
+
+/* モーダル コンテンツエリア */
+
+#contents {
+  position: relative;
+}
+
+#modal-main {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  margin: auto;
+  width: 90%;
+}
+
+.create_contet__modal-box {
+  padding: 20px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.create_contet__modal-box-inner {
+  border: 1px solid #ccc;
+}
+
+.create_contet__modal-box-inner .canvas-container {
+  height: 450px !important;
+  overflow-y: scroll;
+}
+
+/* モーダル 背景エリア */
+
+#modal-bg {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.create__modal-table {
+  display: table;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.create__modal-table-heading {
+  display: table-cell;
+  width: 25%;
+  vertical-align: middle;
+}
+
+.create__modal-table-body {
+  display: table-cell;
+  width: 75%;
+  vertical-align: middle;
+  padding-left: 0.5em;
+  box-sizing: border-box;
+}
+

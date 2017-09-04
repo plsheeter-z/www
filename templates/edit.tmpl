@@ -1,0 +1,225 @@
+﻿<{include file="_header.part"}>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen and (max-width: 768px) and (min-width: 481px)" >
+
+
+<{*編集画面*}>
+
+<div id="contents" class="create">
+  <div class="create__header">
+    <div class="create__header-unit-btn">
+      <a href="./" class="btn-style">
+        戻る
+      </a>
+    </div>
+    <div class="create__header-unit-logo">
+      <img src="image/penra_z_logo_color.png" alt="キングブレーダーZロゴ" class="create__header-logo">
+    </div>
+    <div class="create__header-unit-btn">
+      <input type="button" onclick="javascript:dllink();" value="保存" class="btn-style" />
+    </div>
+
+
+  </div>
+
+
+  <{*プレビュー*}>
+  <div class="create_preview">
+    <canvas id="kingbz" width="<{$width}>" height="<{$height}>">
+    </canvas>
+  </div>
+
+  <{*細かい調整*}>
+  <div class="create_editor">
+  left:<input type="text" id="editleft" width="200" /><br>
+  top:<input type="text" id="edittop" width="200" /><br>
+  angle:<input type="text" id="editangle" width="200" /><br>
+  scaleX:<input type="text" id="editscalex" width="200" /><br>
+  scaleY:<input type="text" id="editscaley" width="200" /><br>
+  <input type="button" id="editapply" width="200" onclick="javascript:editapply();" value="apply" /><br>
+  </div>
+
+  <{*編集項目*}>
+  <div class="create_contet">
+    <div class="create_contet__add">
+      <input id="delbtn" type="button" onclick="javascript:delobj();" value="削除" class="btn-style" disabled />
+    </div>
+    <div class="create_contet__add">
+      <input id="addtextbtn" type="button" onclick="javascript:open_modal('addtext');" value="テキスト追加"  class="btn-style" />
+      <input id="editbtn" type="button" onclick="javascript:open_modal('edittext');" value="テキスト編集" class="btn-style" style="display:none;"/>
+    </div>
+    <div class="create_contet__add">
+      <input id="addstampbtn" type="button" onclick="javascript:open_modal('addstamp');" value="スタンプ追加" class="btn-style" />
+    </div>
+    <div class="create_contet__add">
+      <input id="copybtn" type="button" onclick="javascript:copyObj();" value="コピー" class="btn-style" />
+    </div>
+  </div>
+
+  <div id="modal-main">
+
+    <div id="addtext" style="display: none;" class="create_contet__modal-box">
+      <div class="create__modal-table">
+        <div class="create__modal-table-heading">
+          テキスト
+        </div>
+        <div class="create__modal-table-body">
+          <textarea id="addtxt" class="textarea-style"></textarea>
+        </div>
+      </div>
+      <div class="create__modal-table">
+        <div class="create__modal-table-heading">
+          フォント
+        </div>
+        <div class="create__modal-table-body">
+          <select id="fontselector" class="select-style">
+            <option style="font-family:Comic Sans;" value="Comic Sans">Comic Sans</font>
+            <option style="font-family:HGP行書体;" value="HGP行書体">HGP行書体</font>
+            <option style="font-family:HG正楷書体-PRO;" value="HG正楷書体-PRO">HG正楷書体-PRO</font>
+            <option style="font-family:ＭＳ Ｐゴシック;" value="ＭＳ Ｐゴシック">ＭＳ Ｐゴシック</font>
+            <option style="font-family:ＭＳ Ｐ明朝;" value="ＭＳ Ｐ明朝">ＭＳ Ｐ明朝</font>
+            <option style="font-family:メイリオ;" value="メイリオ">メイリオ</font>
+          </select>
+        </div>
+      </div>
+      <div class="create__modal-table">
+        <div class="create__modal-table-heading">
+          カラー
+        </div>
+        <div class="create__modal-table-body">
+          <input class="jscolor input-style" id="coloersel" value="000000">
+        </div>
+      </div>
+      <input type="button" onclick="javascript:txtadd();" value="追加" class="btn-style" />
+    </div>
+
+    <div id="edittext" style="display: none;" class="create_contet__modal-box">
+      <div class="create__modal-table">
+        <div class="create__modal-table-heading">
+          テキスト
+        </div>
+        <div class="create__modal-table-body">
+          <textarea id="edittxt" class="textarea-style"></textarea>
+        </div>
+      </div>
+      <div class="create__modal-table">
+        <div class="create__modal-table-heading">
+          フォント
+        </div>
+        <div class="create__modal-table-body">
+          <select id="fontselector2" class="select-style">
+            <option style="font-family:Comic Sans;" value="Comic Sans">Comic Sans</font>
+            <option style="font-family:HGP行書体;" value="HGP行書体">HGP行書体</font>
+            <option style="font-family:HG正楷書体-PRO;" value="HG正楷書体-PRO">HG正楷書体-PRO</font>
+            <option style="font-family:ＭＳ Ｐゴシック;" value="ＭＳ Ｐゴシック">ＭＳ Ｐゴシック</font>
+            <option style="font-family:ＭＳ Ｐ明朝;" value="ＭＳ Ｐ明朝">ＭＳ Ｐ明朝</font>
+            <option style="font-family:メイリオ;" value="メイリオ">メイリオ</font>
+          </select>
+        </div>
+      </div>
+      <div class="create__modal-table">
+        <div class="create__modal-table-heading">
+          カラー
+        </div>
+        <div class="create__modal-table-body">
+          <input class="jscolor input-style" id="coloersel2" value="000000">
+        </div>
+      </div>
+
+      <input type="button" onclick="javascript:txtedit();" value="編集" class="btn-style"/>
+    </div>
+
+
+    <div id="addstamp" style="display: none;" class="create_contet__modal-box">
+      <div class="create_contet__modal-box-inner">
+        <canvas id="stampview" style="position:static;" width="300" height="600">
+        </canvas>
+      </div>
+      <input type="button" onclick="javascript:clonestamp();" value="スタンプ追加" class="btn-style" />
+    </div>
+
+    <div id="downloadview" style="display: none;" class="create_contet__modal-box">
+      <img id="loading" src="./image/gif-load.gif">
+      <a id="dllink" download="cat.png" style="display:none;" class="btn-style"></a>
+      <a id="start-save" style="display:none;" onclick="javascript:startSave();" class="btn-style">ここをクリックして保存（アプリ）</a>
+      <div id="png-uri" data-uri="" />
+    </div>
+
+
+  </div>
+
+</div>
+
+<div style="display:none;">
+  <canvas id="dstcanvas" style="border:1px solid #000000; position:static; top:10px; left:10px ;">
+  </canvas>
+</div>
+
+<script>
+//Global
+var canvas,stampview,dstcanvas;
+var bi;
+
+// 初期設定
+canvas = new fabric.Canvas('kingbz');
+canvasEventSet();
+
+stampview = new fabric.Canvas('stampview');
+
+stampview.allowTouchScrolling = true;
+stampview.selection = false;
+stampview.hoverCursor = 'pointer';
+
+
+fabric.loadSVGFromURL('./svg/stamp_apple.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_ball.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_bat.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_cat.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_close.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_cycle.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_headband_cat.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_headband_rabbit.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_heart.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_honey.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_leaf.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_note_1.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_note_2.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_rose.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_shooting_star.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_star.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_star_2.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_star_3.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_strawberry.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_sword.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_triangle_1.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_triangle_2.svg', function(objects, options) {setStampObj(objects, options);});
+fabric.loadSVGFromURL('./svg/stamp_wheel.svg', function(objects, options) {setStampObj(objects, options);});
+
+
+//document.getElementById("dstcanvas").height = canvas.height * ratio + topmargin  * 2;
+//document.getElementById("dstcanvas").width  = canvas.width  * ratio * 2 + leftmargin * 3;
+
+//A4サイズ両端5mmが印刷されないサイズで240DPIのピクセルサイズ
+document.getElementById("dstcanvas").height = 1889;
+document.getElementById("dstcanvas").width  = 2711;
+
+
+dstcanvas = new fabric.Canvas('dstcanvas');
+
+
+var txtobj = new fabric.Text('ペ\nン\nラ\nイ\nト');
+setTextAttr(txtobj,'ＭＳ Ｐゴシック','black');
+canvas.add(txtobj);
+
+var txtobj2 = new fabric.Text('Pen Light!');
+setTextAttr(txtobj2,'Comic Sans','black');
+txtobj2.set({
+top: 260,
+left: 80,
+angle: 270,
+});
+
+canvas.add(txtobj2);
+
+</script>
+<{include file="_footer.part"}>
