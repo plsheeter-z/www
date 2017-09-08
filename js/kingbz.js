@@ -96,7 +96,7 @@ function setStampObj(objects, options)
 		}
 	}
 
-	loadedObject.scale(0.33);
+	loadedObject.scale(0.3);
 	loadedObject.setCoords();
 	stampview.add(loadedObject);
 
