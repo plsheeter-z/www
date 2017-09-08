@@ -1,5 +1,5 @@
-var stampW = 66;
-var stampH = 66;
+var stampW = 44;
+var stampH = 44;
 var nowX = 1;
 var nowY = 1;
 var topmargin = 50;
@@ -96,7 +96,7 @@ function setStampObj(objects, options)
 		}
 	}
 
-	loadedObject.scale(0.5);
+	loadedObject.scale(0.33);
 	loadedObject.setCoords();
 	stampview.add(loadedObject);
 
