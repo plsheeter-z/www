@@ -304,10 +304,10 @@ function clonestamp()
 	stamp.clone(function (o) {
 		var vobj = o;
 		if (vobj) {
-			//vobj.set('scaleX', vobj.scaleX*2 );
-			//vobj.set('scaleY', vobj.scaleY*2 );
-			vobj.set('top', 15);
-			vobj.set('left', 15);
+			vobj.set('scaleX', vobj.scaleX*2 );
+			vobj.set('scaleY', vobj.scaleY*2 );
+			vobj.set('top', 50);
+			vobj.set('left', 30);
 
 			setControler(vobj);
 
@@ -343,8 +343,8 @@ function setControler(obj)
 	obj.set({
 		cornerSize: 25,
 		rotatingPointOffset: 50,
-		cornerStyle: circle,
-		cornerColor: 'green',
+		cornerStyle: 'circle',
+		cornerColor: 'rgba(0,255,0,0.5)',
 		transparentCorners: false,
 	});
 
