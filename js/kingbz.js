@@ -18,6 +18,8 @@ function copyObj()
 			vobj.set('top', vobj.top+15);
 			vobj.set('left', vobj.left+15);
 
+			setControler(vobj);
+
 			canvas.add(vobj);
 			canvas.setActiveObject(vobj);
 		}
