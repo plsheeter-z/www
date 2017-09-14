@@ -309,6 +309,8 @@ function clonestamp()
 			vobj.set('top', 15);
 			vobj.set('left', 15);
 
+			setControler(vobj);
+
 			canvas.add(vobj);
 			canvas.setActiveObject(vobj);
 		}
@@ -339,8 +341,14 @@ function clonestamp()
 function setControler(obj)
 {
 	obj.set({
-		cornerSize: 25,
+		cornerSize: 40,
+		cornerColor: 'green',
+		transparentCorners: false,
 	});
+
+	obj.setControlVisible('tl',false);
+	obj.setControlVisible('bl',false);
+	obj.setControlVisible('mr',false);
 }
 
 function startSave()
