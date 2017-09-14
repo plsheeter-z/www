@@ -341,7 +341,9 @@ function clonestamp()
 function setControler(obj)
 {
 	obj.set({
-		cornerSize: 40,
+		cornerSize: 25,
+		rotatingPointOffset: 50,
+		cornerStyle: circle,
 		cornerColor: 'green',
 		transparentCorners: false,
 	});
@@ -349,6 +351,7 @@ function setControler(obj)
 	obj.setControlVisible('tl',false);
 	obj.setControlVisible('bl',false);
 	obj.setControlVisible('mr',false);
+	obj.setControlVisible('mt',false);
 }
 
 function startSave()
